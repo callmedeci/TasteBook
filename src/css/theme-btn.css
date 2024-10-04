@@ -1,0 +1,5 @@
+@layer components {
+  .a {
+    @apply sm:w-1 md:w-2 lg:w-3 xl:w-4 2xl:w-5;
+  }
+}

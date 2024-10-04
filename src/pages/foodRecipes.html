@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taste hub Food Recipes</title>
+  <link rel="stylesheet" href="../css/app.css" />
+  <script type="module" defer src="../js/controllers/foodRecipesController.js"></script>
+</head>
+
+<body class="xl:py-10">
+  <section class="flex min-h-full w-full max-w-7xl flex-col bg-zinc-800 shadow-2xl lg:rounded-xl self-center">
+    <nav class="relative z-30 flex h-24 items-center justify-between">
+      <div class="mx-5 flex flex-row-reverse items-center gap-4 sm:mx-10">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="size-8 text-zinc-50 md:size-12">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+        </svg>
+
+        <button id="menu-toggle" class="hamburger">
+          <span class="bar bg-orange-500"></span>
+          <span class="bar bg-orange-500"></span>
+          <span class="bar bg-orange-500"></span>
+        </button>
+      </div>
+
+      <ul class="menu menu-hidden py-10 lg:flex">
+        <li
+          class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[20ms] duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+          <a href="./../../index.html" class="list-item hover:text-orange-500">Home</a>
+        </li>
+        <li
+          class="menu-list_item flex -translate-x-24 transform-gpu flex-col justify-center gap-2 transition-all delay-[50ms] duration-300">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-4 rotate-90 text-orange-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+            <span class="list-item hover:text-zinc-50">Recipes</span>
+          </div>
+          <div class="ml-1 flex flex-col gap-2 border-l border-zinc-700">
+            <a href="./foodRecipes.html"
+              class="list-item_active ml-3 list-item rounded px-3 py-2 text-orange-500 transition-all hover:bg-zinc-700 hover:text-orange-600">
+              Food Recipes
+            </a>
+            <a href="./drinksRecipes.html"
+              class="ml-3 list-item rounded px-3 py-2 transition-all hover:bg-zinc-700 hover:text-orange-500">
+              Drinks Recipes
+            </a>
+          </div>
+        </li>
+        <li
+          class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[80ms] duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+          <a href="../pages/articles.html" class="list-item hover:text-orange-500">Articles</a>
+        </li>
+        <li
+          class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[110ms] duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+          <a href="#" class="list-item hover:text-orange-500">About Us</a>
+        </li>
+        <li
+          class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[110ms] duration-300 sm:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+          <button id="btn-open--modal_mobile" type="button" class="list-item hover:text-orange-500">
+            Add Recipe
+          </button>
+        </li>
+      </ul>
+
+      <form class="search w-56 focus-within:shadow-orange-500 md:w-[30%] lg:w-96">
+        <a href="#" class="size-5 sm:size-7 text-zinc-50 items-center justify-center flex">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+        <input placeholder="Search..." type="text" class="search__field" />
+      </form>
+
+      <div class="relative flex h-full gap-2">
+        <button
+          class="btn-open_modal hidden h-full items-center gap-2 p-5 font-open-sans-semibold text-sm uppercase text-zinc-50 transition-all duration-300 hover:bg-zinc-700/50 hover:text-orange-500 sm:flex lg:text-base">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-7">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+          </svg>
+          Add Recipe
+        </button>
+
+        <div class="group relative transform-gpu">
+          <button
+            class="flex h-full transform-gpu items-center gap-2 p-5 font-open-sans-semibold text-sm uppercase text-zinc-50 transition-colors duration-300 hover:bg-zinc-700/50 hover:text-orange-500 lg:text-base">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-7">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+            </svg>
+            <span class="hidden md:block">Bookmarks</span>
+          </button>
+
+          <div
+            class="invisible absolute right-0 z-50 flex min-h-full w-96 transform-gpu flex-col rounded bg-zinc-700 px-3 text-zinc-50 opacity-0 shadow-2xl transition-all duration-500 group-hover:visible group-hover:opacity-100 md:px-0 md:shadow">
+            <ul class="bookmark-container">
+              <li class="flex w-full items-center gap-2 p-5 text-center font-open-sans-semibold">
+                No bookmarks
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-8 text-orange-500">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15.182 16.318A4.486 4.486 0 0 0 12.016 15a4.486 4.486 0 0 0-3.198 1.318M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+                </svg>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mt-8 min-h-[70rem] w-full md:grid md:grid-cols-3">
+      <div class="sidebar -translate-x-[96%] md:translate-x-0">
+        <button type="button" class="sidebar-toggle text-orange-500 hover:text-orange-600">
+          <svg class="transition-all duration-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
+
+        <ul class="search__results-container"></ul>
+
+        <div class="pagination-container"></div>
+      </div>
+
+      <div class="recipes-container col-span-2 h-full w-full items-center">
+        <div class="mt-4 flex max-w-xs items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-16 text-orange-500">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+          </svg>
+          <p>No bookmarks yet. Find a nice recipe and bookmark it :)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal-->
+    <div class="window hidden-window">
+      <form class="upload font-open-sans-regular">
+        <button type="button"
+          class="btn-close_modal absolute right-4 top-4 z-50 size-7 text-rose-600/70 transition-colors duration-300 hover:text-rose-700">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+        </button>
+
+        <!-- Recipe Name -->
+        <div class="input-container">
+          <label for="title" class="font-open-sans-medium text-sm">
+            Title
+          </label>
+          <div class="input-wrapper">
+            <input placeholder="e.g., Pizza, Pasta..." type="text" id="title" name="title" class="input-field"
+              autocomplete="on" maxlength="64" />
+          </div>
+        </div>
+
+        <!-- Image URL -->
+        <div class="input-container">
+          <label for="image-URL" class="font-open-sans-medium text-sm">
+            Image URL
+          </label>
+          <div class="input-wrapper">
+            <input placeholder="https://example.com/like.jpg" type="url" id="image-URL" name="imageURL"
+              class="input-field" />
+          </div>
+        </div>
+
+        <!-- Source URL -->
+        <div class="input-container">
+          <label for="source-URL" class="font-open-sans-medium text-sm">
+            Source URL
+          </label>
+          <div class="input-wrapper">
+            <input placeholder="https://example.com" type="url" id="source-URL" name="sourceURL" class="input-field" />
+          </div>
+        </div>
+
+        <!-- Publisher -->
+        <div class="input-container">
+          <label for="publisher" class="font-open-sans-medium text-sm">
+            Publisher
+          </label>
+          <div class="input-wrapper">
+            <input placeholder="e,g., Me" type="text" id="publisher" name="publisher" class="input-field"
+              minlength="4" />
+          </div>
+        </div>
+
+        <!-- Cooking Time -->
+        <div class="input-container">
+          <label for="cooking-time" class="font-open-sans-medium text-sm">
+            Prep time
+          </label>
+          <div class="input-wrapper">
+            <input placeholder="Enter in min" type="number" id="cooking-time" name="cookingTime"
+              class="input-field appearance-none" maxlength="6" min="1" />
+
+            <button type="button" id="cooking-time-combobox-toggle"
+              class="combobox-toggle recipe-servings absolute right-0 z-50 cursor-pointer rounded bg-zinc-700 p-1 transition-colors duration-300 hover:text-orange-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+          </div>
+
+          <div id="cooking-time-combobox" class="combobox hidden-combo">
+            <option
+              class="cursor-pointer px-5 py-1 font-open-sans-regular text-sm transition-colors duration-300 hover:bg-zinc-600 sm:text-base"
+              value="15">
+              15
+            </option>
+            <option
+              class="cursor-pointer px-5 py-1 font-open-sans-regular text-sm transition-colors duration-300 hover:bg-zinc-600 sm:text-base"
+              value="30">
+              30
+            </option>
+            <option
+              class="cursor-pointer px-5 py-1 font-open-sans-regular text-sm transition-colors duration-300 hover:bg-zinc-600 sm:text-base"
+              value="45">
+              45
+            </option>
+            <option
+              class="cursor-pointer px-5 py-1 font-open-sans-regular text-sm transition-colors duration-300 hover:bg-zinc-600 sm:text-base"
+              value="60">
+              60
+            </option>
+          </div>
+        </div>
+
+        <!-- Servings -->
+        <div class="input-container">
+          <label for="servings" class="font-open-sans-medium text-sm">
+            Servings
+          </label>
+          <div class="input-wrapper">
+            <input placeholder="e.g., 2, 4, 6..." type="number" id="servings" name="servings"
+              class="input-field appearance-none" maxlength="3" min="1" />
+
+            <button type="button" id="servings-combobox-toggle"
+              class="combobox-toggle absolute right-0 z-50 cursor-pointer rounded bg-zinc-700 p-1 transition-colors duration-300 hover:text-orange-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+          </div>
+
+          <div id="servings-combobox" class="combobox hidden-combo">
+            <option
+              class="cursor-pointer px-5 py-1 font-open-sans-regular text-sm transition-colors duration-300 hover:bg-zinc-600 sm:text-base"
+              value="2">
+              2
+            </option>
+            <option
+              class="cursor-pointer px-5 py-1 font-open-sans-regular text-sm transition-colors duration-300 hover:bg-zinc-600 sm:text-base"
+              value="4">
+              4
+            </option>
+            <option
+              class="cursor-pointer px-5 py-1 font-open-sans-regular text-sm transition-colors duration-300 hover:bg-zinc-600 sm:text-base"
+              value="6">
+              6
+            </option>
+            <option
+              class="cursor-pointer px-5 py-1 font-open-sans-regular text-sm transition-colors duration-300 hover:bg-zinc-600 sm:text-base"
+              value="8">
+              8
+            </option>
+          </div>
+        </div>
+
+        <!-- Ingredients -->
+        <div class="input-container col-span-2 mt-4">
+          <label for="ingredients-quantity" class="font-open-sans-medium text-sm">
+            Ingredients
+          </label>
+          <div class="grid grid-cols-2 gap-2">
+            <input placeholder="quantity" type="number" id="ingredients-quantity"
+              class="w-full appearance-none rounded bg-zinc-800/50 px-3 py-2 font-open-sans-regular text-sm shadow outline-none transition-colors focus:bg-zinc-800 md:text-base" />
+
+            <input placeholder="unit" type="text" id="ingredients-unit"
+              class="w-full appearance-none rounded bg-zinc-800/50 px-3 py-2 font-open-sans-regular text-sm shadow outline-none transition-colors focus:bg-zinc-800 md:text-base" />
+
+            <input placeholder="description" type="text" id="ingredients-description" name="ingredients"
+              class="w-full appearance-none rounded bg-zinc-800/50 px-3 py-2 font-open-sans-regular text-sm shadow outline-none transition-colors focus:bg-zinc-800 md:text-base" />
+
+            <button type="button" id="btn-add-ingredient"
+              class="flex items-center justify-center gap-2 rounded bg-green-500 font-open-sans-medium text-xs text-zinc-800 transition-colors duration-300 hover:bg-green-600 md:text-sm">
+              ADD Ingredients
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+
+            <ul class="recipe-ingredients_list invisible opacity-0"></ul>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+          class="col-span-2 w-full rounded bg-orange-500 px-3 py-2 font-open-sans-medium transition-colors duration-300 hover:bg-orange-600">
+          Add Recipe
+        </button>
+      </form>
+
+      <span class="overlay fixed inset-0 z-40 min-h-dvh w-full bg-zinc-800/80"></span>
+    </div>
+  </section>
+
+  <div id="menu-overlay"
+    class="menu-hidden absolute top-0 z-20 h-full w-full bg-zinc-950/70 transition-all duration-300">
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,605 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply flex min-h-dvh w-full flex-col overflow-x-hidden bg-zinc-900;
+}
+
+header {
+    will-change: transform, opacity;
+    @apply my-32 flex h-full w-full max-w-[140rem] transform-gpu items-center justify-center justify-items-center justify-self-center px-5 md:px-12;
+}
+
+main {
+    will-change: transform, opacity;
+    @apply my-40 flex min-h-full w-full max-w-[140rem] transform-gpu flex-col items-center justify-center justify-items-center self-center justify-self-center overflow-x-hidden overflow-y-clip;
+}
+
+footer {
+    will-change: transform, opacity;
+    @apply relative flex h-full w-full max-w-[140rem] transform-gpu flex-col items-center justify-center justify-items-center self-center justify-self-center rounded-t-3xl bg-zinc-800 xl:-mt-2;
+}
+
+p {
+    @apply z-10 font-open-sans-regular text-zinc-50;
+}
+
+h1 {
+    @apply z-10 font-open-sans-semibold text-5xl text-zinc-50 md:text-6xl 2xl:text-7xl;
+}
+
+h2 {
+    @apply z-10 font-open-sans-semibold text-3xl text-zinc-50 sm:text-4xl md:text-5xl 2xl:text-6xl;
+}
+
+h3 {
+    @apply font-julius text-3xl font-semibold text-zinc-50 md:text-4xl 2xl:text-5xl;
+}
+
+h4 {
+    @apply font-open-sans-semibold text-2xl sm:text-3xl 2xl:text-4xl;
+}
+
+h5 {
+    @apply text-xl sm:text-2xl 2xl:text-3xl;
+}
+
+.stylized-message {
+    @apply absolute -right-20 top-0 z-40 hidden -rotate-[65deg] text-center font-dancing text-zinc-50/90 md:block md:max-w-sm md:text-5xl xl:-right-20 xl:top-10 xl:max-w-md xl:text-7xl;
+}
+
+.gradient-text_rose {
+    background-image: linear-gradient(rgb(225 29 72), rgb(255, 185, 127));
+    color: transparent;
+    background-clip: text;
+}
+
+.gradient-text_orange {
+    background-image: linear-gradient(rgb(243, 93, 13), rgb(247, 150, 164));
+    color: transparent;
+    background-clip: text;
+}
+
+.hidden-section {
+    @apply translate-y-36 opacity-0;
+}
+
+.hidden-object {
+    @apply translate-y-12 opacity-0;
+}
+
+.divider {
+    @apply h-[0.1rem] w-full bg-zinc-800;
+}
+
+/* Buttons components */
+@layer components {
+    .theme-toggle-btn {
+        @apply flex self-center justify-self-center overflow-hidden rounded-full shadow-2xl transition-all duration-700;
+    }
+
+    .theme-btn {
+        @apply size-10 rounded-full p-2 transition-all duration-300;
+    }
+
+    .theme-btn_dark-mode {
+        @apply text-blue-500 hover:text-blue-700;
+    }
+
+    .theme-btn_light-mode {
+        @apply text-yellow-500 hover:text-yellow-600;
+    }
+
+    .theme-btn_hidden {
+        @apply -translate-x-5 -translate-y-4 opacity-0 transition-all duration-300;
+    }
+
+    .redirecting-btn {
+        @apply z-10 mt-4 flex w-max items-center rounded-full bg-zinc-50 px-3 py-2 font-open-sans-semibold text-zinc-800 transition-all duration-300 hover:-translate-y-1 hover:translate-x-1 hover:text-orange-500;
+    }
+
+    .dropdown-menu-btn {
+        @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-zinc-50 transition-colors duration-300;
+    }
+}
+
+/* Navbar section */
+@layer components {
+    .navbar {
+        @apply flex max-h-full w-full max-w-[140rem] flex-row-reverse justify-between transition-all lg:justify-around items-center;
+    }
+
+    .nav__list {
+        @apply hidden h-full items-center gap-x-12 justify-self-center font-open-sans-medium text-zinc-800 lg:flex;
+    }
+
+    .list-item {
+        @apply py-1 font-open-sans-regular text-sm text-zinc-100 transition-all duration-300 md:text-base;
+    }
+
+    .list-item_active {
+        @apply font-open-sans-medium text-base md:font-open-sans-semibold md:text-lg;
+    }
+
+    .menu {
+        @apply absolute top-24 z-30 flex min-h-[45%] w-full flex-col justify-evenly rounded-b-2xl bg-zinc-800 px-5 transition-all duration-300 sm:px-10 md:min-h-[40%] xl:hidden;
+    }
+
+    .menu-hidden {
+        @apply invisible opacity-0;
+    }
+
+    .dropdown-menu {
+        @apply absolute left-0 mt-1 h-max w-max rounded-lg bg-zinc-800 text-zinc-50 transition-all duration-300;
+    }
+
+    .dropdown-menu_hidden {
+        @apply invisible translate-y-5 opacity-0;
+    }
+}
+
+/* Header section */
+@layer components {
+    #header-section {
+        will-change: transform, opacity;
+        @apply relative flex h-full w-full -translate-y-14 transform-gpu flex-col items-start gap-8 overflow-hidden rounded-2xl bg-zinc-800/40 p-8 text-zinc-50 shadow-lg transition-all duration-700 sm:items-center sm:p-12 xl:grid xl:grid-cols-3 xl:gap-16;
+    }
+
+    .header-image-container {
+        @apply relative hidden w-full items-center justify-center rounded-full bg-zinc-800/15 xl:flex;
+    }
+
+    .food-image {
+        @apply block h-full w-full rounded-full bg-transparent object-contain shadow-2xl transition-all;
+    }
+
+    .beer-image {
+        @apply absolute z-0 h-min w-full object-contain transition-all md:-right-[10%] md:top-0 md:w-[80%] lg:w-[55%] xl:-right-[20%];
+    }
+}
+
+/* Recipe Components */
+@layer components {
+    #recipes-section {
+        will-change: transform, opacity;
+        @apply mt-32 min-h-full w-full translate-y-48 transform-gpu px-5 text-zinc-50 opacity-0 md:px-16;
+    }
+
+    .recipes-container {
+        @apply flex flex-col gap-8;
+    }
+
+    .recipe {
+        will-change: transform, opacity;
+        @apply flex h-full w-full transform-gpu flex-col items-center justify-center self-center rounded-2xl bg-zinc-700;
+    }
+
+    .recipe-name {
+        @apply absolute top-36 z-10 w-[80%] -skew-y-6 text-center uppercase text-zinc-900;
+    }
+
+    .recipe-title {
+        @apply bg-gradient-to-bl box-decoration-clone px-2 py-2 leading-normal text-zinc-50 sm:px-5;
+    }
+
+    .recipe-title_drinks {
+        @apply from-orange-400 to-rose-600;
+    }
+
+    .recipe-title_food {
+        @apply from-orange-600 to-rose-500;
+    }
+
+    .recipe-image_container {
+        @apply relative flex h-72 min-h-72 w-full;
+    }
+
+    .recipe-image {
+        @apply block h-full w-full appearance-none object-cover outline-none;
+    }
+
+    .image-cover {
+        @apply absolute h-full w-full bg-gradient-to-l;
+    }
+
+    .recipe-details {
+        @apply font-open-sans-regular text-sm sm:font-open-sans-medium sm:text-base;
+    }
+
+    .bookmark-btn {
+        @apply rounded-full bg-gradient-to-bl from-rose-600 to-orange-400 p-2;
+    }
+
+    .bookmark-icon {
+        @apply size-6 fill-transparent transition-all duration-300 sm:size-10;
+    }
+
+    .calories-icon {
+        @apply size-10 md:size-14;
+    }
+
+    .recipe-calories {
+        @apply flex items-center font-open-sans-medium text-lg;
+    }
+
+    .recipe-ingredients {
+        @apply flex w-full grid-cols-2 flex-col items-start gap-6 px-8 font-open-sans-light text-sm sm:gap-3 sm:font-open-sans-regular sm:text-base md:grid;
+    }
+
+    .recipe-ingredient {
+        @apply flex items-start gap-5 text-zinc-300 md:mt-1;
+    }
+
+    .recipe-icons {
+        @apply size-7 sm:size-7 md:size-10;
+    }
+
+    .more-btn {
+        @apply my-16 flex items-center justify-center self-center justify-self-center font-open-sans-light text-xs text-zinc-50 transition-all duration-300 hover:text-orange-500 md:font-open-sans-medium md:text-base 2xl:my-20;
+    }
+
+    .spinner {
+        @apply size-12 animate-spin text-orange-500;
+    }
+}
+
+/* Sliders section */
+@layer components {
+    /* Swiper Slider */
+    .swiper {
+        @apply h-full w-full transform-gpu rounded-2xl shadow;
+
+        .swiper-wrapper {
+            @apply relative flex h-96 w-full rounded-2xl 2xl:max-w-3xl;
+
+            .swiper-slide {
+                @apply relative flex h-full w-full flex-col gap-3 bg-zinc-800;
+                will-change: transform, opacity;
+            }
+        }
+    }
+
+    #sliders_container-section {
+        will-change: transform, opacity;
+        @apply hidden-section mt-32 min-h-full w-full transform-gpu px-5 text-zinc-50 md:px-16;
+    }
+
+    #sliders-section {
+        will-change: transform, opacity;
+        @apply flex h-full w-full transform-gpu grid-cols-2 flex-col gap-8 xl:grid;
+    }
+
+    .title-inspiring_quotes {
+        @apply my-14 text-center leading-none 2xl:text-start;
+    }
+
+    .quote-icon {
+        @apply absolute left-5 top-5 -skew-x-6 text-7xl md:text-9xl;
+    }
+
+    .quote-title {
+        @apply mx-3 mt-20 w-max -skew-x-12 p-1 font-julius font-semibold uppercase md:mx-24;
+    }
+
+    .quote-description {
+        @apply z-10 mt-6 px-3 text-base sm:text-xl md:px-20;
+    }
+
+    .author-profile {
+        @apply mx-3 my-6 flex w-max items-center gap-6 md:mx-24;
+    }
+
+    .author-image_container {
+        @apply h-20 w-20 overflow-hidden rounded-full shadow-md;
+    }
+
+    .author-image {
+        @apply block h-full w-full object-cover grayscale;
+    }
+
+    .author-details {
+        @apply flex flex-col;
+    }
+
+    .author-name {
+        @apply font-semibold;
+    }
+
+    .author-role {
+        @apply min-w-48 max-w-[70%] text-sm text-zinc-300;
+    }
+
+    .background-container {
+        @apply absolute -z-10 flex h-full w-full items-end justify-center opacity-15;
+    }
+
+    .background-image {
+        @apply block h-full w-full object-cover grayscale;
+    }
+
+    .overlay-gradient {
+        @apply absolute h-full w-full bg-gradient-to-bl opacity-50;
+    }
+}
+
+/* Footer section */
+@layer components {
+    .gradient-left {
+        @apply absolute left-0 top-0 -z-10 h-full w-[30%] bg-gradient-to-r from-orange-500/10 md:w-[35%] lg:w-[40%] xl:w-[45%] 2xl:w-[50%];
+    }
+
+    .gradient-right {
+        @apply absolute right-0 top-0 -z-10 h-full w-[30%] bg-gradient-to-l from-rose-500/10 md:w-[35%] lg:w-[40%] xl:w-[45%] 2xl:w-[50%];
+    }
+
+    .dish-container {
+        @apply absolute -top-[10.5rem] flex w-max transform-gpu flex-col items-center justify-end justify-items-center self-center text-center sm:-top-[14rem] xl:-top-[19rem];
+    }
+
+    .main-dish {
+        @apply z-20 h-56 w-56 transform-gpu rounded-full bg-zinc-900 p-2 sm:h-72 sm:w-72 sm:p-4 xl:h-96 xl:w-96;
+    }
+
+    .side-dish {
+        @apply absolute z-10 h-36 w-36 transform-gpu rounded-full bg-zinc-900 p-2 sm:h-48 sm:w-48 sm:p-4 md:h-52 md:w-52 xl:h-60 xl:w-60;
+    }
+
+    .side-dish_right {
+        @apply -right-16 -translate-x-40 -translate-y-2 opacity-0 sm:-right-28;
+    }
+
+    .side-dish_left {
+        @apply -left-16 -translate-y-2 translate-x-40 opacity-0 sm:-left-28;
+    }
+
+    .content-wrapper {
+        @apply mt-8 flex h-max w-full max-w-6xl flex-col justify-center gap-8 self-center px-6 md:gap-12 md:px-14;
+    }
+
+    .section-title {
+        @apply mt-12 text-center text-zinc-50 md:mt-16;
+    }
+
+    .description {
+        @apply max-w-2xl self-center text-center font-open-sans-regular text-xs sm:text-sm md:text-base;
+    }
+
+    .links-grid {
+        @apply grid grid-cols-2 gap-16 xl:grid-cols-4;
+    }
+
+    .links-list {
+        @apply flex flex-col gap-1 sm:gap-2 md:gap-4 xl:gap-x-16;
+    }
+
+    .link-title {
+        @apply font-open-sans-medium text-zinc-50 sm:font-open-sans-semibold;
+    }
+
+    .support-list {
+        @apply h-full w-full items-start md:justify-self-end;
+    }
+
+    .social-media_list {
+        @apply h-full w-full items-start md:justify-self-end;
+    }
+
+    .social-buttons {
+        @apply flex gap-2 md:gap-3 xl:gap-4;
+    }
+
+    .social-button {
+        @apply h-max w-max;
+    }
+
+    .social-link {
+        @apply flex h-full w-full items-center justify-center rounded-full bg-zinc-400 p-2 transition-all duration-300 hover:bg-zinc-50 md:p-3;
+    }
+
+    .social-icon {
+        @apply size-4 transition-all duration-300 md:size-5;
+    }
+}
+
+/*Recipe Page*/
+@layer components {
+    .search {
+        @apply relative flex items-center justify-start gap-2 overflow-hidden rounded-full bg-zinc-900/50 p-4 shadow transition-all duration-300 focus-within:-translate-y-1;
+    }
+
+    .search__field {
+        @apply w-full bg-transparent px-5 font-open-sans-regular text-sm text-zinc-400 outline-none transition-all duration-500 focus:text-zinc-50 md:text-base;
+    }
+
+    .search__results-container {
+        @apply mt-4 flex h-full w-full flex-col;
+    }
+
+    .bookmark-container {
+        @apply my-4 flex h-full w-full flex-col;
+    }
+
+    .search__result {
+        @apply flex items-center;
+    }
+
+    .pagination-container {
+        @apply flex flex-row-reverse justify-between p-6;
+    }
+
+    .pagination-btn {
+        @apply flex items-center justify-center gap-1 rounded-full bg-orange-500/70 px-5 py-2 font-open-sans-semibold text-xs text-zinc-50 shadow transition-colors hover:bg-orange-500 xl:text-sm;
+    }
+
+    .window {
+        @apply absolute z-50 col-span-2 flex h-full w-full items-center justify-center self-center transition-all duration-300;
+    }
+
+    .upload {
+        @apply relative z-50 grid h-max w-[50rem] grid-cols-2 items-center gap-6 rounded bg-zinc-900 p-8 text-start text-zinc-50;
+    }
+
+    .input-container {
+        @apply relative flex flex-col gap-3;
+    }
+
+    .input-wrapper {
+        @apply relative flex w-full items-center rounded bg-zinc-800/20 shadow transition-colors focus-within:bg-zinc-800;
+    }
+
+    .input-field {
+        @apply w-full bg-inherit px-3 py-2 font-open-sans-regular text-xs outline-none md:text-base;
+    }
+
+    .combobox {
+        @apply absolute right-0 top-20 z-50 flex h-max w-max flex-col gap-1 rounded bg-zinc-700 shadow transition-all duration-300;
+    }
+
+    .hidden-window {
+        @apply invisible opacity-0;
+    }
+    .hidden-combo {
+        @apply invisible -translate-y-4 opacity-0;
+    }
+    .recipe-ingredients_list {
+        @apply col-span-2 my-3 grid grid-cols-2 gap-2 rounded bg-zinc-800 px-3 py-2 transition-all duration-300 md:grid-cols-4;
+    }
+    .sidebar-toggle {
+        @apply absolute -right-11 top-20 z-50 flex size-12 items-center justify-center rounded-r-2xl bg-zinc-700 p-2 md:hidden;
+    }
+    .sidebar {
+        @apply absolute z-20 col-span-1 min-h-screen w-[80%] flex-col rounded-r-2xl bg-zinc-700 shadow transition-all duration-700 md:relative md:flex md:w-full md:rounded md:shadow-none;
+    }
+}
+
+@layer components {
+    .article-wrapper {
+        will-change: transform, opacity;
+        @apply flex min-h-full w-full flex-col items-center justify-center gap-16 lg:grid lg:grid-cols-2;
+    }
+
+    .article-container {
+        will-change: transform, opacity;
+        @apply flex h-full w-full flex-col gap-3;
+    }
+
+    .article-image_link {
+        @apply relative flex h-96 w-full cursor-pointer items-center justify-center overflow-hidden rounded-3xl shadow-2xl;
+    }
+
+    .article-image {
+        @apply block h-full w-full object-cover transition-all duration-500 hover:scale-110;
+    }
+
+    .article-description {
+        @apply text-zinc-300;
+    }
+
+    .article-read_more {
+        @apply mt-2 w-max text-zinc-400 underline transition-colors duration-300;
+    }
+}
+
+/* Lenis Config */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+.swiper-pagination-bullet-active {
+    @apply bg-zinc-950/50;
+    background-color: rgb(9 9 11 / 0.5) !important;
+    opacity: 50%;
+}
+
+/* استایل دکمه همبرگری */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* استایل دکمه بسته */
+.hamburger.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Adding Font faces to the project */
+@font-face {
+    font-family: 'open-sans-light';
+    src: url('./../../public/fonts/open-sans/OpenSans-Light.woff2')
+        format('woff2');
+    display: swap;
+}
+
+@font-face {
+    font-family: 'open-sans-medium';
+    src: url('./../../public/fonts/open-sans/OpenSans-Medium.woff2')
+        format('woff2');
+    display: swap;
+}
+
+@font-face {
+    font-family: 'open-sans-regular';
+    src: url('./../../public/fonts/open-sans/OpenSans-Regular.woff2')
+        format('woff2');
+    display: swap;
+}
+
+@font-face {
+    font-family: 'open-sans-semibold';
+    src: url('./../../public/fonts/open-sans/OpenSans-SemiBold.woff2')
+        format('woff2');
+    display: swap;
+}
+
+@font-face {
+    font-family: 'dancing';
+    src: url('./../../public/fonts/DancingScript-VariableFont_wght.woff2')
+        format('woff2');
+    display: swap;
+}
+
+@font-face {
+    font-family: 'julius';
+    src: url('./../../public/fonts/JuliusSansOne-Regular.woff2') format('woff2');
+    display: swap;
+}
