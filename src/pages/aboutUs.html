@@ -2,138 +2,333 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <!-- <link rel="icon" type="image/svg+xml" href="" /> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taste Hub About us</title>
-  <link rel="stylesheet" href="path/to/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="../css/app.css" />
-  <script type="module" defer src="../js/controllers/homeController.js"></script>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taste Hub About us</title>
+    <link rel="stylesheet" href="path/to/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/app.css" />
+    <script type="module" defer src="../js/controllers/homeController.js"></script>
 </head>
 
 <body>
-  <nav class="navbar z-20">
-    <form class="search w-56 focus-within:shadow-orange-500 md:w-[30%] lg:w-[20%] m-5 sm:mx-10 sm:mt-20 bg-zinc-700/50">
-      <a href="#" class="size-5 sm:size-7 text-zinc-50 items-center justify-center flex">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </a>
-      <input placeholder="Search..." type="text" class="search__field" />
-    </form>
-
-
-
-    <div class="m-5 flex flex-row-reverse items-center gap-4 sm:mx-4 sm:mt-20">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-        class="size-12 text-zinc-50">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-      </svg>
-
-      <button id="menu-toggle" class="hamburger lg:hidden">
-        <span class="bar bg-orange-500"></span>
-        <span class="bar bg-orange-500"></span>
-        <span class="bar bg-orange-500"></span>
-      </button>
-    </div>
-
-    <ul class="nav__list m-5 sm:mx-10 sm:mt-20">
-      <li>
-        <a href="./" class="list-item_active list-item text-orange-500 hover:text-orange-600">Home</a>
-      </li>
-      <li class="relative">
-        <button class="dropdown-menu-btn hover:text-orange-500">
-          Recipes
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="dropdown-menu-svg size-4 transition-transform duration-300">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-          </svg>
-        </button>
-        <div class="dropdown-menu dropdown-menu_hidden">
-          <div class="flex flex-col gap-2 font-open-sans-regular">
-            <a href="src/pages/foodRecipes.html" class="list-item rounded px-3 py-2 transition-all hover:bg-zinc-700">
-              Food Recipes
+    <nav class="navbar z-20 self-center">
+        <form
+            class="search w-56 focus-within:shadow-orange-500 md:w-[30%] lg:w-[20%] m-5 sm:mx-10 sm:mt-20 bg-zinc-700/50">
+            <a href="#" class="size-5 sm:size-7 text-zinc-50 items-center justify-center flex">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
             </a>
-            <a href="src/pages/drinksRecipes.html" class="list-item rounded px-3 py-2 transition-all hover:bg-zinc-700">
-              Drinks Recipes
-            </a>
-          </div>
+            <input placeholder="Search..." type="text" class="search__field" />
+        </form>
+
+        <div class="m-5 flex flex-row-reverse items-center gap-4 sm:mx-4 sm:mt-20">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-12 text-zinc-50">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+            </svg>
+
+            <button id="menu-toggle" class="hamburger lg:hidden">
+                <span class="bar bg-orange-500"></span>
+                <span class="bar bg-orange-500"></span>
+                <span class="bar bg-orange-500"></span>
+            </button>
         </div>
-      </li>
-      <li>
-        <a href="./src/pages/articles.html" class="list-item hover:text-orange-500">Articles</a>
-      </li>
-      <li>
-        <a href="#" class="list-item hover:text-orange-500">About Us</a>
-      </li>
-      <li>
-        <a href="#" class="list-item hover:text-orange-500">Bookmarks</a>
-      </li>
-    </ul>
 
-    <ul class="menu menu-hidden top-20 sm:top-40 py-10">
-      <li
-        class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[20ms] duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="size-4">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-        </svg>
-        <a href="./" class="list-item_active list-item text-orange-500 hover:text-orange-600">Home</a>
-      </li>
-      <li
-        class="menu-list_item flex -translate-x-24 transform-gpu flex-col justify-center gap-2 transition-all delay-[50ms] duration-300">
-        <div class="flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-4 rotate-90 text-orange-500">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-          </svg>
-          <span class="list-item hover:text-zinc-50">Recipes</span>
+        <ul class="nav__list m-5 sm:mx-10 sm:mt-20">
+            <li>
+                <a href="./" class="list-item_active list-item text-orange-500 hover:text-orange-600">Home</a>
+            </li>
+            <li class="relative">
+                <button class="dropdown-menu-btn hover:text-orange-500">
+                    Recipes
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="dropdown-menu-svg size-4 transition-transform duration-300">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                    </svg>
+                </button>
+                <div class="dropdown-menu dropdown-menu_hidden">
+                    <div class="flex flex-col gap-2 font-open-sans-regular">
+                        <a href="src/pages/foodRecipes.html"
+                            class="list-item rounded px-3 py-2 transition-all hover:bg-zinc-700">
+                            Food Recipes
+                        </a>
+                        <a href="src/pages/drinksRecipes.html"
+                            class="list-item rounded px-3 py-2 transition-all hover:bg-zinc-700">
+                            Drinks Recipes
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="./src/pages/articles.html" class="list-item hover:text-orange-500">Articles</a>
+            </li>
+            <li>
+                <a href="#" class="list-item hover:text-orange-500">About Us</a>
+            </li>
+            <li>
+                <a href="#" class="list-item hover:text-orange-500">Bookmarks</a>
+            </li>
+        </ul>
+
+        <ul class="menu menu-hidden top-20 sm:top-40 py-10">
+            <li
+                class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[20ms] duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+                <a href="./" class="list-item_active list-item text-orange-500 hover:text-orange-600">Home</a>
+            </li>
+            <li
+                class="menu-list_item flex -translate-x-24 transform-gpu flex-col justify-center gap-2 transition-all delay-[50ms] duration-300">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-4 rotate-90 text-orange-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                    <span class="list-item hover:text-zinc-50">Recipes</span>
+                </div>
+                <div class="ml-1 flex flex-col gap-2 border-l border-zinc-700">
+                    <a href="src/pages/foodRecipes.html"
+                        class="ml-3 list-item rounded px-3 py-2 transition-all hover:bg-zinc-700 hover:text-orange-500">
+                        Food Recipes
+                    </a>
+                    <a href="src/pages/drinksRecipes.html"
+                        class="ml-3 list-item rounded px-3 py-2 transition-all hover:bg-zinc-700 hover:text-orange-500">
+                        Drinks Recipes
+                    </a>
+                </div>
+            </li>
+            <li
+                class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[80ms] duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+                <a href="./src/pages/articles.html" class="list-item hover:text-orange-500">Articles</a>
+            </li>
+            <li
+                class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[110ms] duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+                <a href="#" class="list-item hover:text-orange-500">About Us</a>
+            </li>
+            <li
+                class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[110ms] duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+                <a href="#" class="list-item hover:text-orange-500">Bookmarks</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="my-32 h-full w-full max-w-[110rem] transform-gpu px-5 md:px-12 justify-self-center self-center">
+
+        <div
+            class=" flex h-full w-full transform-gpu flex-col items-start gap-14 rounded-2xl bg-zinc-800/40 p-8 text-zinc-50 shadow-lg transition-all duration-700 sm:items-center sm:p-12 xl:grid xl:grid-cols-3">
+
+            <div class="col-span-2 flex flex-col gap-6">
+                <h1 class="max-w-xl text-zinc-200 font-open-sans-medium">
+                    I'm
+                    <span class="text-orange-500 font-open-sans-semibold">
+                        Yones Maghsoudie
+                    </span>the creator of
+                    this website
+                </h1>
+                <p class="text-zinc-300">
+                    born and raised in Shiraz, Iran. From a young age, I was passionate about becoming a game
+                    developer, which led me to start coding in Python. However, my journey took a turn when I
+                    encountered
+                    JavaScript, and I fell in love with its syntax and flexibility. Since then, I’ve shifted my focus to
+                    web
+                    development and expanded my skills in multiple technologies.
+                </p>
+            </div>
+
+            <div class="w-96 h-96 -rotate-6 shadow-2xl rounded-full overflow-hidden">
+                <img src="../../public/pexels-sulimansallehi-1704488.jpg" alt="">
+            </div>
+
+            <div class="w-96 h-max rotate-2 shadow-2xl rounded-2xl overflow-hidden">
+                <img src="../../public/pexels-sulimansallehi-1704488.jpg" alt="">
+            </div>
+
+            <div class="col-span-2 flex flex-col text-zinc-300 font-open-sans-medium leading-loose gap-2">
+                <h4 class="max-w-3xl text-zinc-100">
+                    Additionally, I’ve integrated two main APIs to power the content of the website:
+                </h4>
+                <ul class="flex flex-col mx-2">
+                    <li class="flex gap-1 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4 text-orange-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        The Forkify API for retrieving recipes:
+                        (<a class="hover:text-orange-500 transition-colors text-zinc-400 underline"
+                            href="https://forkify-api.herokuapp.com">
+                            forkify-api.herokuapp.com
+                        </a>)
+                    </li>
+                    <li class="flex gap-1 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4 text-orange-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        The Cocktail DB API for alcoholic drinks data:
+                        (<a class="hover:text-orange-500 transition-colors text-zinc-400 underline"
+                            href="https://www.thecocktaildb.com">
+                            thecocktaildb.com
+                        </a>)
+                    </li>
+                </ul>
+                <p>
+                    Whether you’re here to find your next meal inspiration or dive deep
+                    into the culinary world, I hope youfind <span class="text-orange-500">Taste Hub</span> as exciting
+                    as I do!
+                </p>
+            </div>
+
+            <div class="col-span-2 flex flex-col text-zinc-300 font-open-sans-medium leading-loose gap-4">
+                <p>
+                    This website,
+                    <span class="text-orange-500">Taste Hub</span>,
+                    is my first real portfolio and serves as a comprehensive resource where users can explore recipes,
+                    search for
+                    food and alcoholic drinks, and read related articles—all in one place.
+
+                    This project is built with the MVC architecture, ensuring a structured and maintainable approach to
+                    web
+                    development.
+                </p>
+                <h4 class="max-w-3xl text-zinc-100">
+                    It leverages various libraries and tools, including:
+                </h4>
+                <ul class="flex flex-col mx-3 gap-2">
+                    <li class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48"
+                            class="size-7 mix-blend-soft-light">
+                            <path fill="#00acc1"
+                                d="M24,9.604c-6.4,0-10.4,3.199-12,9.597c2.4-3.199,5.2-4.398,8.4-3.599 c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.6 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-6.4,0-10.4,3.199-12,9.598 c2.4-3.199,5.2-4.399,8.4-3.599c1.825,0.457,3.13,1.781,4.575,3.246c2.353,2.388,5.077,5.152,11.025,5.152 c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.599c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24 L12,24z">
+                            </path>
+                        </svg>
+                        <span class="font-open-sans-semibold text-zinc-200">TailwindCSS</span> for efficient styling
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48"
+                            class="size-7 mix-blend-soft-light">
+                            <linearGradient id="oOTIjsOjTqJdvfy5S4iCZa_dJjTWMogzFzg_gr1" x1="13.315" x2="38.005"
+                                y1="514.906" y2="481.377" gradientTransform="matrix(1 0 0 -1 0 514)"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#41d1ff"></stop>
+                                <stop offset="1" stop-color="#9231be"></stop>
+                            </linearGradient>
+                            <path fill="url(#oOTIjsOjTqJdvfy5S4iCZa_dJjTWMogzFzg_gr1)"
+                                d="M44.86,9.976L25.023,45.448c-0.41,0.732-1.462,0.737-1.878,0.008L2.915,9.979 C2.462,9.185,3.141,8.223,4.041,8.384l19.859,3.55c0.127,0.023,0.256,0.022,0.383-0.001l19.443-3.544 C44.623,8.225,45.305,9.18,44.86,9.976z">
+                            </path>
+                            <linearGradient id="oOTIjsOjTqJdvfy5S4iCZb_dJjTWMogzFzg_gr2" x1="25.502" x2="37.131"
+                                y1="508.764" y2="428.99" gradientTransform="matrix(1 0 0 -1 0 514)"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#fed100"></stop>
+                                <stop offset="1" stop-color="#e36001"></stop>
+                            </linearGradient>
+                            <path fill="url(#oOTIjsOjTqJdvfy5S4iCZb_dJjTWMogzFzg_gr2)"
+                                d="M33.574,3.01L19.019,5.862c-0.239,0.047-0.416,0.25-0.431,0.493l-0.895,15.121 c-0.021,0.356,0.306,0.633,0.654,0.552l4.052-0.935c0.379-0.087,0.722,0.246,0.644,0.628l-1.204,5.895 c-0.081,0.397,0.291,0.736,0.679,0.618l2.503-0.76c0.388-0.118,0.761,0.222,0.679,0.62l-1.913,9.26 c-0.12,0.579,0.651,0.895,0.972,0.398l0.215-0.332l11.86-23.669c0.199-0.396-0.144-0.848-0.579-0.764l-4.171,0.805 c-0.392,0.076-0.725-0.289-0.615-0.673l2.722-9.438C34.301,3.299,33.967,2.933,33.574,3.01z">
+                            </path>
+                        </svg>
+                        <span class="font-open-sans-semibold text-zinc-200">Vite</span> as the development build tool
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"
+                            class="size-7 mix-blend-soft-light">
+                            <path fill="#5a29e4"
+                                d="m 34,43.977569 27.379067,-22.912155 0.0385,91.494586 -9.3189,7.74007 -0.15403,-76.091455 z" />
+                            <path fill="#5a29e4"
+                                d="M 96.961687,82.322502 69.582627,105.23466 69.544127,13.74007 78.863017,6 l 0.15403,76.091452 z" />
+                        </svg>
+
+                        <span class="font-open-sans-semibold text-zinc-200">Axios</span> for handling API requests
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <img src="../../public/svgs/gsap-greensock.svg" alt="gsap" class="size-7 mix-blend-soft-light">
+                        <span class="font-open-sans-semibold text-zinc-200">GSAP</span> for smooth animations
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <img src="https://lenis.darkroom.engineering/favicon-32x32.png" alt="lenis"
+                            class="size-7 mix-blend-soft-light">
+                        <span class="font-open-sans-semibold text-zinc-200">
+                            Lenis
+                        </span> for scroll animations
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <img src="https://swiperjs.com/images/favicon.png" alt="swiperjs"
+                            class="size-7 mix-blend-soft-light">
+                        <span class="font-open-sans-semibold text-zinc-200">
+                            Swiper
+                        </span> for beautiful carousels and sliders
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <img src="https://avatars.githubusercontent.com/u/339286?s=48&v=4" alt="yup"
+                            class="bg-blend-difference size-7">
+                        <span class="font-open-sans-semibold text-zinc-200">Yup</span> for form validation
+                    </li>
+                </ul>
+                <p>
+                    Although I didn’t directly learn a lot from them,
+                    <a href="https://github.com/jadijadi" target="_blank"
+                        class="hover:text-orange-500 transition-colors text-zinc-400 underline">
+                        Jadi Mirmirani
+                    </a>
+                    and my friend
+                    <a href="https://github.com/r4ype" target="_blank"
+                        class="hover:text-orange-500 transition-colors text-zinc-400 underline">
+                        Parsa
+                    </a>
+                    have profoundly
+                    influenced my path in programming. Their passion and approach to technology shaped my mindset and
+                    inspired me deeply.
+                    In terms of formal learning, I’ve built my
+                    <span class="text-yellow-500">
+                        JavaScript
+                    </span> skills through
+                    <a href="https://github.com/jonasschmedtmann" target="_blank"
+                        class="hover:text-orange-500 transition-colors text-zinc-400 underline">
+                        Jonas Schmedtmann’s
+                    </a>
+                    courses on Udemy and expanded my knowledge of
+                    <span class="text-sky-500">
+                        TailwindCSS
+                    </span>,
+                    <span class="text-violet-500">
+                        PHP
+                    </span>, and
+                    <span class="text-rose-500">
+                        Laravel
+                    </span> thanks to
+                    the guidance of
+                    <a href="https://github.com/RealMrHex" target="_blank"
+                        class="hover:text-orange-500 transition-colors text-zinc-400 underline">
+                        Mr. Armin Hooshmand
+                    </a>.
+                </p>
+            </div>
+
+            <div class="w-96 h-max rotate-3 shadow-2xl rounded-2xl overflow-hidden">
+                <img src="../../public/pexels-sulimansallehi-1704488.jpg" alt="">
+            </div>
         </div>
-        <div class="ml-1 flex flex-col gap-2 border-l border-zinc-700">
-          <a href="src/pages/foodRecipes.html"
-            class="ml-3 list-item rounded px-3 py-2 transition-all hover:bg-zinc-700 hover:text-orange-500">
-            Food Recipes
-          </a>
-          <a href="src/pages/drinksRecipes.html"
-            class="ml-3 list-item rounded px-3 py-2 transition-all hover:bg-zinc-700 hover:text-orange-500">
-            Drinks Recipes
-          </a>
-        </div>
-      </li>
-      <li
-        class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[80ms] duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="size-4">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-        </svg>
-        <a href="./src/pages/articles.html" class="list-item hover:text-orange-500">Articles</a>
-      </li>
-      <li
-        class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[110ms] duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="size-4">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-        </svg>
-        <a href="#" class="list-item hover:text-orange-500">About Us</a>
-      </li>
-      <li
-        class="menu-list_item flex -translate-x-24 transform-gpu items-center gap-2 text-orange-500 transition-all delay-[110ms] duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="size-4">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-        </svg>
-        <a href="#" class="list-item hover:text-orange-500">Bookmarks</a>
-      </li>
-    </ul>
-  </nav>
+    </section>
 
-
-
-  <div id="menu-overlay"
-    class="menu-hidden absolute top-0 z-10 h-screen w-full bg-zinc-950/70 blur transition-all duration-300"></div>
+    <div id="menu-overlay"
+        class="menu-hidden absolute top-0 z-10 h-screen w-full bg-zinc-950/70 blur transition-all duration-300"></div>
 </body>
 
 </html>
