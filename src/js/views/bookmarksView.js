@@ -1,5 +1,5 @@
 import View from './View.js';
-import previewRecipeView from './previewView.js';
+import previewView from './previewView.js';
 
 class BookmarksView extends View {
     _parentEl = document.querySelector('.bookmark-container');
@@ -14,7 +14,7 @@ class BookmarksView extends View {
     _generateMarkup() {
         return this._data
             .map(bookmark =>
-                previewRecipeView.render({ data: bookmark, render: false }),
+                previewView.render({ data: bookmark, render: false }),
             )
             .join('');
     }

@@ -12,5 +12,5 @@ export const TRENDING_FOOD_RECIPES_PATH = `${JSON_PATH}trendingFoods.json`;
 export const QUOTES_RECIPES_PATH = `${JSON_PATH}quotes.json`;
 export const ARTICLES_PATH = `${JSON_PATH}articles.json`;
 
-export const TIMEOUT_SEC = 10;
+export const TIMEOUT_SEC = 15;
 export const RESULTS_PER_PAGE = 10;

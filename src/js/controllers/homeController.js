@@ -34,7 +34,7 @@ const initializeArticles = async function () {
         const randomArticleSelections = Object.keys(articles).map(
             articleTitle =>
                 articles[articleTitle].at(
-                    generateRandomNumber(1, articles[articleTitle].length),
+                    Math.trunc(Math.random() * articles[articleTitle].length),
                 ),
         );
 
@@ -56,7 +56,9 @@ const initializeFoodRecipe = async function () {
 
         //Loading Recipes
         await foodRecipeModel.loadRecipe(
-            trendingRecipeID[generateRandomNumber(0, trendingRecipeID.length)],
+            trendingRecipeID[
+                Math.trunc(Math.random() * trendingRecipeID.length)
+            ],
         );
 
         //Render Recipe Markup
