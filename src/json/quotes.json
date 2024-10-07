@@ -1,86 +1,86 @@
 {
-  "quotes_on_foods": [
-    {
-      "quote": "There is no sincere love than the love of food.",
-      "name": "George Bernard Shaw",
-      "career": "Playwright, Critic",
-      "nationality": "Irish",
-      "tag": "food",
-      "context": "love of food"
-    },
-    {
-      "quote": "The best food is the food made with love.",
-      "name": "Anthony Bourdain",
-      "career": "Chef, Writer, Television Host",
-      "nationality": "American",
-      "tag": "food",
-      "context": "love in cooking"
-    },
-    {
-      "quote": "Food is the universal truth. We all need it, so we should treat it with love and respect.",
-      "name": "Fyodor Dostoevsky",
-      "career": "Novelist, Philosopher",
-      "nationality": "Russian",
-      "tag": "food",
-      "context": "respect for food"
-    },
-    {
-      "quote": "Food is art. Food is a way of expressing.",
-      "name": "Ferran Adrià",
-      "career": "Chef",
-      "nationality": "Spanish",
-      "tag": "food",
-      "context": "food as art"
-    },
-    {
-      "quote": "One cannot think well, love well, sleep well, if one has not dined well.",
-      "name": "Virginia Woolf",
-      "career": "Writer",
-      "nationality": "British",
-      "tag": "food",
-      "context": "importance of dining well"
-    }
-  ],
-  "quotes_on_drinks": [
-    {
-      "quote": "A little bit of alcohol can really facilitate the creative process.",
-      "name": "David Lynch",
-      "career": "Filmmaker, Artist",
-      "nationality": "American",
-      "tag": "alcoholic drinks",
-      "context": "alcohol and creativity"
-    },
-    {
-      "quote": "Alcohol may be man's worst enemy, but the Bible says love your enemy.",
-      "name": "Frank Sinatra",
-      "career": "Singer, Actor",
-      "nationality": "American",
-      "tag": "alcoholic drinks",
-      "context": "accepting alcohol's flaws"
-    },
-    {
-      "quote": "I drink to make other people more interesting.",
-      "name": "Ernest Hemingway",
-      "career": "Writer",
-      "nationality": "American",
-      "tag": "alcoholic drinks",
-      "context": "social interactions"
-    },
-    {
-      "quote": "The mark of a good drink is that it helps you see the truth.",
-      "name": "F. Scott Fitzgerald",
-      "career": "Writer",
-      "nationality": "American",
-      "tag": "alcoholic drinks",
-      "context": "truth through drink"
-    },
-    {
-      "quote": "Too much of anything is bad, but too much good whiskey is barely enough.",
-      "name": "Mark Twain",
-      "career": "writer and humorist",
-      "nationality": "American",
-      "tag": "alcoholic drinks",
-      "context": "excess in fine whiskey"
-    }
-  ]
+    "quotes_on_foods": [
+        {
+            "quote": "There is no sincere love than the love of food.",
+            "name": "George Bernard Shaw",
+            "career": "Playwright, Critic",
+            "nationality": "Irish",
+            "tag": "food",
+            "context": "love of food"
+        },
+        {
+            "quote": "The best food is the food made with love.",
+            "name": "Anthony Bourdain",
+            "career": "Chef, Writer, Television Host",
+            "nationality": "American",
+            "tag": "food",
+            "context": "love in cooking"
+        },
+        {
+            "quote": "Food is the universal truth. We all need it, so we should treat it with love and respect.",
+            "name": "Fyodor Dostoevsky",
+            "career": "Novelist, Philosopher",
+            "nationality": "Russian",
+            "tag": "food",
+            "context": "respect for food"
+        },
+        {
+            "quote": "Food is art. Food is a way of expressing.",
+            "name": "Ferran Adrià",
+            "career": "Chef",
+            "nationality": "Spanish",
+            "tag": "food",
+            "context": "food as art"
+        },
+        {
+            "quote": "One cannot think well, love well, sleep well, if one has not dined well.",
+            "name": "Virginia Woolf",
+            "career": "Writer",
+            "nationality": "British",
+            "tag": "food",
+            "context": "importance of dining well"
+        }
+    ],
+    "quotes_on_drinks": [
+        {
+            "quote": "A little bit of alcohol can really facilitate the creative process.",
+            "name": "David Lynch",
+            "career": "Filmmaker, Artist",
+            "nationality": "American",
+            "tag": "alcoholic drinks",
+            "context": "alcohol and creativity"
+        },
+        {
+            "quote": "Alcohol may be man's worst enemy, but the Bible says love your enemy.",
+            "name": "Frank Sinatra",
+            "career": "Singer, Actor",
+            "nationality": "American",
+            "tag": "alcoholic drinks",
+            "context": "accepting alcohol's flaws"
+        },
+        {
+            "quote": "I drink to make other people more interesting.",
+            "name": "Ernest Hemingway",
+            "career": "Writer",
+            "nationality": "American",
+            "tag": "alcoholic drinks",
+            "context": "social interactions"
+        },
+        {
+            "quote": "The mark of a good drink is that it helps you see the truth.",
+            "name": "F. Scott Fitzgerald",
+            "career": "Writer",
+            "nationality": "American",
+            "tag": "alcoholic drinks",
+            "context": "truth through drink"
+        },
+        {
+            "quote": "Too much of anything is bad, but too much good whiskey is barely enough.",
+            "name": "Mark Twain",
+            "career": "writer and humorist",
+            "nationality": "American",
+            "tag": "alcoholic drinks",
+            "context": "excess in fine whiskey"
+        }
+    ]
 }
