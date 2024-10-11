@@ -122,7 +122,7 @@ class ArticlesView extends View {
         ['hashchange', 'load'].forEach(event => {
             window.addEventListener(event, () => {
                 gsap.to(window, {
-                    ease: 'power1.inOut',
+                    ease: 'power2.inOut',
                     duration: 2,
                     scrollTo: 'article',
                 });

@@ -6,13 +6,6 @@ import bookmarksView from '../views/bookmarksView.js';
 import drinksRecipeModel from './../models/drinksRecipeModel.js';
 import mobileMenuView from '../views/mobileMenuView.js';
 
-let model = null;
-const loadModel = async function () {
-    const path = window.location.pathname.split('/').at(-1);
-
-    console.log(path);
-};
-
 const loadRecipe = async function () {
     try {
         const id = window.location.hash.slice(1);
@@ -33,8 +26,11 @@ const loadRecipe = async function () {
 
 const loadSearchResults = async function () {
     try {
-        const query =
-            window.location.href.split('?')[1] || searchView.getQuery();
+        const hrefQuery = window.location.href.split('?')[1];
+        if (!hrefQuery) return;
+
+        const query = hrefQuery || searchView.getQuery();
+        if (!query) return;
         //Guard Clause
         if (!query) return;
 

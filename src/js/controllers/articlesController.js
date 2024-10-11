@@ -29,8 +29,10 @@ const loadArticle = async function () {
 
 const loadSearchResults = async function () {
     try {
-        const query =
-            window.location.href.split('?')[1] || searchView.getQuery();
+        const hrefQuery = window.location.href.split('?')[1];
+        if (!hrefQuery) return;
+
+        const query = hrefQuery || searchView.getQuery();
         if (!query) return;
 
         articleResultsView.renderSpinner();
