@@ -65,7 +65,7 @@ class RecipeView extends View {
               </div>
             </div>
 
-            <button class="bookmark-btn group">
+            <button class="bookmark-btn bg-gradient-to-bl from-rose-600 to-orange-400 group">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="bookmark-icon ${this._data.bookmarked ? 'fill-zinc-50' : ''}">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -78,21 +78,7 @@ class RecipeView extends View {
             <div class="text-center flex flex-col items-center gap-2">
               <h4 class="font-julius font-semibold">
                 recipe ingredients
-              </h4>
-              <span class="recipe-calories">
-                ${
-                    this._data?.alcoholic
-                        ? `<img loading="lazy" 
-                    alt="calories svg" 
-                    src="./../../public/svgs/liquor-calories.svg"
-                    class="calories-icon">`
-                        : `<img loading="lazy"
-                     alt="calories svg"
-                     src="./../../public/svgs/food-calories.svg" 
-                     class="calories-icon">`
-                }
-                Calories:<span class="ml-1">50</span>
-              </span>
+              </h4>  
             </div>
 
             <ul class="recipe-ingredients">            

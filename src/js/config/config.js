@@ -1,6 +1,6 @@
 const JSON_PATH = './src/json/';
 
-export const FORKIFY_RECIPE_API_KEY = '952660c7-378a-4c9c-b8fa-23c3027e147d';
+export const FORKIFY_RECIPE_API_KEY = 'f42530b6-5134-4f2d-87c7-2b728409ce96';
 export const FORKIFY_API_URL =
     'https://forkify-api.herokuapp.com/api/v2/recipes';
 

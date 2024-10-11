@@ -29,7 +29,8 @@ const loadArticle = async function () {
 
 const loadSearchResults = async function () {
     try {
-        const query = searchView.getQuery();
+        const query =
+            window.location.href.split('?')[1] || searchView.getQuery();
         if (!query) return;
 
         articleResultsView.renderSpinner();
@@ -67,6 +68,7 @@ const sort = function (sortType, isSort) {
 };
 
 function init() {
+    loadSearchResults();
     bookmarksView.addHandlerLoadBookmarks(loadBookmarks);
     articleView.addHandlerAddBookmark(addBookmark);
     articleView.addHandlerRender(loadArticle);

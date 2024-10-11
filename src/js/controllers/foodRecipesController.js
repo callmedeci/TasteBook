@@ -36,6 +36,8 @@ const validationSchema = yup.object().shape({
     ingredients: yup.array().min(1, 'Please add at least one ingredient'),
 });
 
+console.log();
+
 const loadRecipe = async function () {
     try {
         const id = window.location.hash.slice(1);
@@ -56,7 +58,9 @@ const loadRecipe = async function () {
 
 const loadSearchResults = async function () {
     try {
-        const query = searchView.getQuery();
+        const query =
+            window.location.href.split('?')[1] || searchView.getQuery();
+
         //Guard Clause
         if (!query) return;
 
@@ -144,6 +148,7 @@ const addRecipe = async function (newRecipe) {
 };
 
 function init() {
+    loadSearchResults();
     bookmarksView.addHandlerLoadBookmarks(loadBookmarks);
     recipeView.addHandlerAddBookmark(addBookmark);
     recipeView.addHandlerRender(loadRecipe);

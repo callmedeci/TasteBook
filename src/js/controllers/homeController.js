@@ -1,4 +1,3 @@
-import { generateRandomNumber } from '../helper/helper.js';
 import quotesModel from '../models/quotesModel.js';
 import * as transition from '../views/transitionView.js';
 import articlesModel from '../models/articlesModel.js';
@@ -7,6 +6,7 @@ import drinksRecipeModel from './../models/drinksRecipeModel.js';
 import sliderView from '../views/slidersView.js';
 import recipeView from '../views/recipe/recipeView.js';
 import articleResultsView from '../views/article/articleResultsView.js';
+import searchView from '../views/searchView.js';
 import navbarView from '../views/navbarView.js';
 import viewHeader from '../views/headerView.js';
 
@@ -81,7 +81,9 @@ const initializeDrinksRecipe = async function () {
 
         //Loading Recipes
         await drinksRecipeModel.loadRecipe(
-            trendingRecipeID[generateRandomNumber(0, trendingRecipeID.length)],
+            trendingRecipeID[
+                Math.trunc(Math.random() * trendingRecipeID.length)
+            ],
         );
 
         //Render Recipe Markup
@@ -95,12 +97,31 @@ const initializeDrinksRecipe = async function () {
     }
 };
 
+const search = async function () {
+    const query = searchView.getQuery();
+    const category = navbarView.category;
+
+    const basePath = import.meta.env.BASE_URL;
+
+    if (category === 'food')
+        window.location.replace(
+            `${basePath}src/pages/foodRecipes.html?${query}`,
+        );
+    if (category === 'drinks')
+        window.location.replace(
+            `${basePath}src/pages/drinksRecipes.html?${query}`,
+        );
+    if (category === 'articles')
+        window.location.replace(`${basePath}src/pages/articles.html?${query}`);
+};
+
 function init() {
     return Promise.all([
         initializeQuoteSlider(),
         initializeArticles(),
         initializeFoodRecipe(),
         initializeDrinksRecipe(),
+        searchView.addHandlerSearch(search),
     ]).then(_ => transition.animateElementsTransition());
 }
-await init();
+init();

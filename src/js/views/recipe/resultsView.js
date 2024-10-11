@@ -1,5 +1,5 @@
 import View from '../View.js';
-import previewRecipeView from '../previewView.js';
+import previewView from '../previewView.js';
 
 class ResultsView extends View {
     _parentEl = document.querySelector('.search__results-container');
@@ -15,9 +15,7 @@ class ResultsView extends View {
 
     _generateMarkup() {
         return this._data
-            .map(result =>
-                previewRecipeView.render({ data: result, render: false }),
-            )
+            .map(result => previewView.render({ data: result, render: false }))
             .join('');
     }
 

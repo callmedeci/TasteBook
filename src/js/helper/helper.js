@@ -4,10 +4,6 @@ import { TIMEOUT_SEC } from '../config/config.js';
 export const extractLastWordLowercase = string =>
     string.split(' ').at(-1).toLowerCase();
 
-export const generateRandomNumber = function (min, max) {
-    return Number(Math.trunc(Math.random() * (max - min + 1)));
-};
-
 const timeout = function (s) {
     return new Promise(function (_, reject) {
         setTimeout(() => {
@@ -18,12 +14,21 @@ const timeout = function (s) {
     });
 };
 
-export const AJAX = async function (url) {
+export const AJAX = async function (url, method = 'GET', postData) {
     try {
-        const data = await Promise.race([axios.get(url), timeout(TIMEOUT_SEC)]);
+        const fetch = await axios({
+            method: method,
+            ...(postData && { data: postData }),
+            url: url,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        const data = await Promise.race([fetch, timeout(TIMEOUT_SEC)]);
 
         // Guard clause for non-OK responses
-        if (data.status !== 200)
+        if (data.status !== 200 && data.status !== 201)
             throw new Error(`Network response was not ok: ${data.statusText}`);
 
         return data;

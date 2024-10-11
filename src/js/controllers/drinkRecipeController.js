@@ -33,7 +33,8 @@ const loadRecipe = async function () {
 
 const loadSearchResults = async function () {
     try {
-        const query = searchView.getQuery();
+        const query =
+            window.location.href.split('?')[1] || searchView.getQuery();
         //Guard Clause
         if (!query) return;
 
@@ -76,6 +77,7 @@ const addBookmark = function () {
 };
 
 function init() {
+    loadSearchResults();
     searchView.addHandlerSearch(loadSearchResults);
     bookmarksView.addHandlerLoadBookmarks(loadBookmarks);
     recipeView.addHandlerAddBookmark(addBookmark);

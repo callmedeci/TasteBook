@@ -4,7 +4,6 @@ import {
     FORKIFY_API_URL,
     TRENDING_FOOD_RECIPES_PATH,
 } from '../config/config';
-import axios from 'axios';
 
 class foodRecipeModel extends Model {
     _bookmarksPath = 'foodRecipeBookmarks';
@@ -25,6 +24,7 @@ class foodRecipeModel extends Model {
             sourceUrl: recipe.source_url,
             title: recipe.title,
             cookingTime: recipe.cooking_time,
+            ...(recipe.key && { key: recipe.key }),
         };
     }
 
@@ -73,6 +73,7 @@ class foodRecipeModel extends Model {
                     imageUrl: rec.image_url,
                     publisher: rec.publisher,
                     title: rec.title,
+                    ...(rec.key && { key: rec.key }),
                 };
             });
         } catch (err) {
@@ -94,14 +95,10 @@ class foodRecipeModel extends Model {
 
             const {
                 data: { data },
-            } = await axios.post(
+            } = await this._AJAX(
                 `${FORKIFY_API_URL}?key=${FORKIFY_RECIPE_API_KEY}`,
+                'POST',
                 JSON.stringify(recipe),
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                },
             );
 
             this.state.entry = this._createRecipeObject(data);
