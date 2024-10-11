@@ -14,7 +14,30 @@
 <body>
     <nav class="navbar z-20 self-center">
         <form
-            class="search w-56 focus-within:shadow-orange-500 md:w-[30%] lg:w-[20%] m-5 sm:mx-10 sm:mt-20 bg-zinc-700/50">
+            class="search w-56 focus-within:shadow-orange-500 md:w-[30%] lg:w-[20%] m-5 sm:mx-10 sm:mt-20 bg-zinc-700 overflow-visible">
+            <button type="button" id="categoryTabsBtn"
+                class="text-zinc-50 size-7 flex items-center justify-center hover:text-orange-500 transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
+                </svg>
+            </button>
+
+            <div class="categoryTabs categoryTabs-hidden">
+                <div class="flex flex-col gap-2 font-open-sans-regular">
+                    <button type="button" data-category="food" class="mt-6 text-orange-500 categoryTab">
+                        Food Recipes
+                    </button>
+                    <button type="button" data-category="drinks" class="categoryTab">
+                        Drinks Recipes
+                    </button>
+                    <button type="button" data-category="articles" class="categoryTab">
+                        Articles
+                    </button>
+                </div>
+            </div>
+
             <a href="#" class="size-5 sm:size-7 text-zinc-50 items-center justify-center flex">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
