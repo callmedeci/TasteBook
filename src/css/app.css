@@ -137,6 +137,16 @@ h5 {
     .dropdown-menu_hidden {
         @apply invisible translate-y-5 opacity-0;
     }
+
+    .categoryTabs {
+        @apply absolute mt-1 h-max w-max rounded-lg text-zinc-50 transition-all duration-300 top-10 left-4 bg-zinc-800 -z-50;
+    }
+    .categoryTabs-hidden {
+        @apply opacity-0 invisible translate-y-10;
+    }
+    .categoryTab {
+        @apply rounded px-3 py-1 xl:py-2 text-xs sm:text-sm xl:text-base transition-all hover:bg-zinc-700;
+    }
 }
 
 /* Header section */
@@ -208,7 +218,7 @@ h5 {
     }
 
     .bookmark-btn {
-        @apply rounded-full bg-gradient-to-bl from-rose-600 to-orange-400 p-2;
+        @apply rounded-full p-2;
     }
 
     .bookmark-icon {
@@ -405,7 +415,7 @@ h5 {
 /*Recipe Section*/
 @layer components {
     .search {
-        @apply relative flex items-center justify-start gap-2 overflow-hidden rounded-full bg-zinc-900/50 p-4 shadow transition-all duration-300 focus-within:-translate-y-1;
+        @apply relative flex items-center justify-start gap-2 overflow-hidden rounded-full bg-zinc-900/50 p-4 shadow transition-all duration-300;
     }
 
     .search__field {
