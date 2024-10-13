@@ -6,6 +6,9 @@ import bookmarksView from '../views/bookmarksView.js';
 import drinksRecipeModel from './../models/drinksRecipeModel.js';
 import mobileMenuView from '../views/mobileMenuView.js';
 
+import 'core-js/actual';
+import 'regenerator-runtime';
+
 const loadRecipe = async function () {
     try {
         const id = window.location.hash.slice(1);
@@ -24,13 +27,10 @@ const loadRecipe = async function () {
     }
 };
 
-const loadSearchResults = async function () {
+const loadSearchResults = async function (params) {
     try {
-        const hrefQuery = window.location.href.split('?')[1];
-        if (!hrefQuery) return;
+        const query = searchView.getQuery() || params;
 
-        const query = hrefQuery || searchView.getQuery();
-        if (!query) return;
         //Guard Clause
         if (!query) return;
 
@@ -72,8 +72,10 @@ const addBookmark = function () {
     bookmarksView.render({ data: drinksRecipeModel.state.bookmarks });
 };
 
-function init() {
-    loadSearchResults();
+const params = new URLSearchParams(window.location.search).get('search');
+
+export default function init() {
+    if (params !== null) loadSearchResults(params);
     searchView.addHandlerSearch(loadSearchResults);
     bookmarksView.addHandlerLoadBookmarks(loadBookmarks);
     recipeView.addHandlerAddBookmark(addBookmark);

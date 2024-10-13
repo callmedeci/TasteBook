@@ -8,6 +8,9 @@ import foodRecipeModel from './../models/foodRecipeModel.js';
 import addRecipeView from '../views/recipe/addRecipeView.js';
 import mobileMenuView from '../views/mobileMenuView.js';
 
+import 'core-js/actual';
+import 'regenerator-runtime';
+
 const validationSchema = yup.object().shape({
     servings: yup
         .string()
@@ -54,13 +57,9 @@ const loadRecipe = async function () {
     }
 };
 
-const loadSearchResults = async function () {
+const loadSearchResults = async function (params) {
     try {
-        const hrefQuery = window.location.href.split('?')[1];
-        if (!hrefQuery) return;
-
-        const query = hrefQuery || searchView.getQuery();
-        if (!query) return;
+        const query = searchView.getQuery() || params;
 
         //Guard Clause
         if (!query) return;
@@ -148,8 +147,10 @@ const addRecipe = async function (newRecipe) {
     }
 };
 
-function init() {
-    loadSearchResults();
+const params = new URLSearchParams(window.location.search).get('search');
+
+export default function init() {
+    if (params !== null) loadSearchResults(params);
     bookmarksView.addHandlerLoadBookmarks(loadBookmarks);
     recipeView.addHandlerAddBookmark(addBookmark);
     recipeView.addHandlerRender(loadRecipe);

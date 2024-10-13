@@ -658,41 +658,36 @@ html.lenis body {
 /* Adding Font faces to the project */
 @font-face {
     font-family: 'open-sans-light';
-    src: url('./../../public/fonts/open-sans/OpenSans-Light.woff2')
-        format('woff2');
+    src: url('/fonts/open-sans/OpenSans-Light.woff2') format('woff2');
     display: swap;
 }
 
 @font-face {
     font-family: 'open-sans-medium';
-    src: url('./../../public/fonts/open-sans/OpenSans-Medium.woff2')
-        format('woff2');
+    src: url('/fonts/open-sans/OpenSans-Medium.woff2') format('woff2');
     display: swap;
 }
 
 @font-face {
     font-family: 'open-sans-regular';
-    src: url('./../../public/fonts/open-sans/OpenSans-Regular.woff2')
-        format('woff2');
+    src: url('/fonts/open-sans/OpenSans-Regular.woff2') format('woff2');
     display: swap;
 }
 
 @font-face {
     font-family: 'open-sans-semibold';
-    src: url('./../../public/fonts/open-sans/OpenSans-SemiBold.woff2')
-        format('woff2');
+    src: url('/fonts/open-sans/OpenSans-SemiBold.woff2') format('woff2');
     display: swap;
 }
 
 @font-face {
     font-family: 'dancing';
-    src: url('./../../public/fonts/DancingScript-VariableFont_wght.woff2')
-        format('woff2');
+    src: url('/fonts/DancingScript-VariableFont_wght.woff2') format('woff2');
     display: swap;
 }
 
 @font-face {
     font-family: 'julius';
-    src: url('./../../public/fonts/JuliusSansOne-Regular.woff2') format('woff2');
+    src: url('/fonts/JuliusSansOne-Regular.woff2') format('woff2');
     display: swap;
 }

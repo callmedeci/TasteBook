@@ -28,19 +28,25 @@ export const AJAX = async function (url, method = 'GET', postData) {
         const data = await Promise.race([fetch, timeout(TIMEOUT_SEC)]);
 
         // Guard clause for non-OK responses
-        if (data.status !== 200 && data.status !== 201)
-            throw new Error(`Network response was not ok: ${data.statusText}`);
+        if (!data || (data.status !== 200 && data.status !== 201))
+            throw new Error(
+                `Network response was not ok: ${data.statusText || 'No status text available'}`,
+            );
 
         return data;
     } catch (err) {
-        console.error(err.message + '🔥');
-        throw err.message;
+        // Improved error handling
+        const errorMessage = err.response
+            ? `Network error: ${err.response.statusText || err.message}`
+            : err.message;
+        console.error(errorMessage + '🔥');
+        throw new Error(errorMessage);
     }
 };
 
 export const isValidJSON = function (data) {
     // Guard clause for empty or unexpected data
     if (typeof data !== 'object' || !data)
-        throw new Error(`Network response was not ok: ${data.statusText}`);
+        throw new Error(`Invalid JSON data received`);
     return data;
 };

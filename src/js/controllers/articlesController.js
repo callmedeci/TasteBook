@@ -5,6 +5,9 @@ import bookmarksView from '../views/bookmarksView.js';
 import searchView from '../views/searchView.js';
 import mobileView from '../views/mobileMenuView.js';
 
+import 'core-js/actual';
+import 'regenerator-runtime';
+
 const loadArticle = async function () {
     try {
         const id = window.location.hash.slice(1);
@@ -27,12 +30,9 @@ const loadArticle = async function () {
     }
 };
 
-const loadSearchResults = async function () {
+const loadSearchResults = async function (params) {
     try {
-        const hrefQuery = window.location.href.split('?')[1];
-        if (!hrefQuery) return;
-
-        const query = hrefQuery || searchView.getQuery();
+        const query = searchView.getQuery() || params;
         if (!query) return;
 
         articleResultsView.renderSpinner();
@@ -69,8 +69,10 @@ const sort = function (sortType, isSort) {
     articleResultsView.update(articlesModel.state.results);
 };
 
-function init() {
-    loadSearchResults();
+const params = new URLSearchParams(window.location.search).get('search');
+
+export default function init() {
+    if (params !== null) loadSearchResults(params);
     bookmarksView.addHandlerLoadBookmarks(loadBookmarks);
     articleView.addHandlerAddBookmark(addBookmark);
     articleView.addHandlerRender(loadArticle);

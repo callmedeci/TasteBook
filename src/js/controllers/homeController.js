@@ -10,6 +10,9 @@ import searchView from '../views/searchView.js';
 import navbarView from '../views/navbarView.js';
 import viewHeader from '../views/headerView.js';
 
+import 'core-js/actual';
+import 'regenerator-runtime';
+
 const initializeQuoteSlider = async function () {
     try {
         //Load Quotes
@@ -105,17 +108,19 @@ const search = async function () {
 
     if (category === 'food')
         window.location.replace(
-            `${basePath}src/pages/foodRecipes.html?${query}`,
+            `${basePath}src/pages/foodRecipes.html?search=${query}`,
         );
     if (category === 'drinks')
         window.location.replace(
-            `${basePath}src/pages/drinksRecipes.html?${query}`,
+            `${basePath}src/pages/drinksRecipes.html?search=${query}`,
         );
     if (category === 'articles')
-        window.location.replace(`${basePath}src/pages/articles.html?${query}`);
+        window.location.replace(
+            `${basePath}src/pages/articles.html?search=${query}`,
+        );
 };
 
-function init() {
+export default function init() {
     return Promise.all([
         initializeQuoteSlider(),
         initializeArticles(),
