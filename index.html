@@ -49,15 +49,9 @@
 		</form>
 
 		<div class="m-5 flex flex-row-reverse items-center gap-4 sm:mx-4 sm:mt-20">
-			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 58.61 17.07"
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.61 17.07"
 				class="size-20 sm:size-36 md:size-40 xl:size-48">
 				<defs>
-					<clipPath id="clippath">
-						<text transform="translate(0 12.83)"
-							style="fill:none; font-family:'Dancing Script', cursive; font-size:14.92px; font-weight:600;">
-							<tspan x="0" y="0">Taste</tspan>
-						</text>
-					</clipPath>
 					<linearGradient id="linear-gradient" x1="0" y1="7.95" x2="30.19" y2="7.95" gradientUnits="userSpaceOnUse">
 						<stop offset="0" stop-color="#f37321" />
 						<stop offset=".29" stop-color="#f27024" />
@@ -70,9 +64,10 @@
 						xlink:href="#linear-gradient" />
 				</defs>
 				<g id="Layer_1">
-					<g style="clip-path:url(#clippath);">
-						<rect y=".3" width="30.19" height="15.29" style="fill:url(#linear-gradient); stroke-width:0px;" />
-					</g>
+					<text transform="translate(0 12.83)"
+						style="fill:url(#linear-gradient); font-family:'Dancing Script', cursive; font-size:14.92px; font-weight:600;">
+						<tspan x="0" y="0">Taste</tspan>
+					</text>
 					<rect x="30.02" y="1.12" width="28.59" height="15.29" rx="1.03" ry="1.03"
 						style="fill:url(#linear-gradient-2); stroke-width:0px;" />
 				</g>
@@ -83,7 +78,6 @@
 					</text>
 				</g>
 			</svg>
-
 
 			<button id="menu-toggle" class="hamburger lg:hidden">
 				<span class="bar bg-orange-500"></span>
