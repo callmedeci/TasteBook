@@ -33,7 +33,7 @@ class RecipeView extends View {
               <div class="flex items-center justify-center gap-2">
                 ${
                     this._data?.alcoholic
-                        ? '<img loading="lazy" src="svgs/liquor-glass.svg" alt="liquor-glass" class="recipe-icons">'
+                        ? '<img loading="lazy" src="/svgs/liquor-glass.svg" alt="liquor-glass" class="recipe-icons">'
                         : `
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="recipe-icons text-orange-500">
@@ -49,7 +49,7 @@ class RecipeView extends View {
               <div class="flex items-center justify-evenly gap-2">
               ${
                   this._data?.alcoholic
-                      ? '<img loading="lazy" src="svgs/glass-drinks.svg" alt="glass drinks" class="size-7 sm:size-7 md:size-10"/>'
+                      ? '<img loading="lazy" src="/svgs/glass-drinks.svg" alt="glass drinks" class="size-7 sm:size-7 md:size-10"/>'
                       : `
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="recipe-icons text-orange-500">

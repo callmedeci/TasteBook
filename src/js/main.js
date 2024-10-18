@@ -1,4 +1,5 @@
-// src/js/main.js
+import 'core-js/actual';
+import 'regenerator-runtime/runtime';
 
 // Automatically import all JS files in controllers
 const controllers = import.meta.glob('./controllers/*.js');
