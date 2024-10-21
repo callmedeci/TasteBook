@@ -87,7 +87,7 @@ We welcome contributions to make TasteBook even better! Here’s how you can hel
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the GNU General Public License v3.0.
 
 🙌 Acknowledgements
 
