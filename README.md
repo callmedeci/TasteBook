@@ -89,7 +89,7 @@ We welcome contributions to make TasteBook even better! Here’s how you can hel
 
 This project is licensed under the GNU General Public License v3.0.
 
-##🙌 Acknowledgements
+## 🙌 Acknowledgements
 
 -   Tailwind CSS for the amazing styling framework.
 -   Vite for super-fast development.
