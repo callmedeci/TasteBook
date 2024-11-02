@@ -57,10 +57,10 @@ To run the project locally, follow these steps:
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/yourusername/tastebook.git
-    cd tastebook
-    ```
+```bash
+git clone https://github.com/callmedeci/TasteBook.git
+cd tastebook
+```
 
 2. Install the dependencies:
 
@@ -87,9 +87,9 @@ We welcome contributions to make TasteBook even better! Here’s how you can hel
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the GNU General Public License v3.0.
 
-🙌 Acknowledgements
+## 🙌 Acknowledgements
 
 -   Tailwind CSS for the amazing styling framework.
 -   Vite for super-fast development.
