@@ -1,19 +1,19 @@
-# 🍽️ TasteBook 📖
+# TasteBook
 
 Welcome to TasteBook, your ultimate culinary companion! This web application allows users to explore, search, and bookmark a vast collection of food and drink recipes. Whether you're a seasoned chef or a curious food enthusiast, TasteBook has something delicious for everyone!
 
-### 🌐 Live Demo
+### Live Demo
 
 Check out the live version of TasteBook [here](https://taste-book-one.vercel.app/).
 
-## 🚀 Features
+## Features
 
 -   Search Recipes: Easily find your favorite dishes with our intuitive search functionality.
 -   Bookmark Your Favorites: Save recipes for later and create your personalized recipe collection.
 -   Explore Articles: Discover fascinating facts and histories about various foods and drinks.
 -   Responsive Design: Enjoy a seamless experience on all devices, from desktops to smartphones.
 
-## 💻 Tech Stack
+## Tech Stack
 
 TasteBook is built using modern web technologies:
 
@@ -25,7 +25,7 @@ TasteBook is built using modern web technologies:
 -   Facade Pattern: Simplifying interactions between components.
 -   Publisher-Subscriber Pattern: For efficient event handling and communication.
 
-### 📦 Dependencies
+### Dependencies
 
 -   Development Dependencies:
 
@@ -44,14 +44,14 @@ TasteBook is built using modern web technologies:
     -   `swiper`: "^11.1.10" - Modern mobile touch slider.
     -   `yup`: "^1.4.0" - JavaScript schema builder for value parsing and validation.
 
-## 🌐 API References
+## API References
 
 TasteBook utilizes the following APIs to fetch delicious recipes and drink information:
 
 1. [Forkify API](https://forkify-api.herokuapp.com/api/v2) - A robust API for searching and retrieving food recipes.
 2. [TheCocktailDB](https://www.thecocktaildb.com/api/json/v1) - A comprehensive API for accessing cocktail recipes and drink details.
 
-## 🛠️ Installation
+## Installation
 
 To run the project locally, follow these steps:
 
@@ -76,7 +76,7 @@ npm run dev
 
 4. Open your browser and visit http://localhost:3000 to see TasteBook in action!
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions to make TasteBook even better! Here’s how you can help:
 
@@ -85,11 +85,11 @@ We welcome contributions to make TasteBook even better! Here’s how you can hel
 3. Commit your changes and push to your branch.
 4. Open a pull request to discuss your changes.
 
-## 📄 License
+## License
 
 This project is licensed under the GNU General Public License v3.0.
 
-## 🙌 Acknowledgements
+## Acknowledgements
 
 -   Tailwind CSS for the amazing styling framework.
 -   Vite for super-fast development.
